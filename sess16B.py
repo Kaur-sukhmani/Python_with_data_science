@@ -111,9 +111,9 @@ def pets_menu():
         elif choice == 3:
 
             phone = input("Enter Customer phone : ")
-            sql = pet.get_pet_sql_query(phone)
+            sql = customer.get_customers_sql_query(phone)
             rows = db.execute_select_sql(sql)
-            columns = ['PID', 'NAME', 'AGE', 'WEIGHT', 'BREED', 'GENDER', 'CID', 'CREATEDON']
+            columns = ['CID', 'NAME', 'PHONE', 'EMAIL', 'AGE', 'GENDER', 'ADDRESS', 'CREATEDON']
             print(tabulate(rows, headers=columns, tablefmt="grid"))
 
             customer_fetched = rows[0]
@@ -125,7 +125,6 @@ def pets_menu():
             print(tabulate(rows, headers=columns, tablefmt="grid"))
 
             pet.pid = int(input("enter pet id:"))
-
             delete_choice = input("Are Your Sure to Delete ? (yes/no): ")
 
             if delete_choice == "yes":
