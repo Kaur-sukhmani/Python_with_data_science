@@ -133,7 +133,7 @@ def consultation_menu():
 
         elif choice == 4:
             date = input("Enter date: ")
-            print("Invalid date format. Please enter the date in YYYY-MM-DD format.")
+            # print("Please enter the date in YYYY-MM-DD format.")
             sql = consultation.get_consultaion_bydate_sql_query(date)
             rows = db.execute_select_sql(sql)
             # for row in rows:
